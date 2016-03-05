@@ -1,0 +1,91 @@
+/* deal with line height on headings. look at bootstrap */
+
+
+body{
+	background-color:$body-bg-color;
+}
+.container{
+	padding:0;
+}
+
+.header{
+	border:0 !important;
+	padding: 0 !important;
+}
+img.fullWidth {
+	width: 100%; 
+}
+
+.hidden { visibility: hidden; }
+.viewMore {
+	display: block; 
+	text-align: center; 
+	margin-bottom: 15px;
+}
+.alignCenter {
+	text-align: center; 
+}
+.floatRight {
+	float: right; 
+}
+
+.floatLeft {
+	float: left; 
+}
+.overflowText{
+	height:60px;
+	overflow:hidden;
+}
+.removeOverflowText{
+	height:auto;
+	overflow:auto;
+}
+
+
+ul.separatedListItems li {
+	margin-bottom: 20px; 
+}
+
+.scroll-view {
+	margin-top: 0;
+}
+
+.topFade {
+	position: absolute; 
+	width: 100%; 
+	height: 5px;
+	z-index: 1;
+	@include twoColorVerticalGradient(rgba($blue-darker_rgb,1), rgba($blue-darker_rgb,0), $blue-darker_rgb, $blue-darker_rgb);
+	#web & {
+	  display:none;
+	}
+}
+.bottomFade {
+	position: relative; 
+	top: -9px;
+	width: 100%; 
+	height: 10px; 
+	z-index: 1;
+	@include twoColorVerticalGradient(rgba($blue-darker_rgb,0), rgba($blue-darker_rgb,1), $blue-darker_rgb, $blue-darker_rgb);
+}
+
+.lightbox_overlay {
+	position: absolute; 
+	top: 0%; 
+	left: 0;
+	width: 100%; 
+	height: 100%; 
+	z-index: 1001;
+}
+.dark_overlay {
+	@extend .lightbox_overlay;
+	background-color: rgba($blue-darker_rgb,0.45); 
+}
+.dark_overlay-darker {
+	@extend .lightbox_overlay;
+	background-color: rgba($blue-darker_rgb,0.9); 
+}
+.light_overlay {
+	@extend .lightbox_overlay;
+	background-color: rgba($white_rgb, 0.7);
+}

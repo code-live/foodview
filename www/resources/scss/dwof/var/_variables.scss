@@ -1,0 +1,159 @@
+// variables for background images
+$search-url: '../images/Search.png';
+$settings-url: '../images/Settings-profile.png';
+$success-url: '../images/Successful.png';
+$logout-url: '../images/Logout.png';
+$edit-url: '../images/Edit.png';
+$edit-btn-url: '../images/Edit-button.png';
+$dropdown-url: '../images/Dropdown_waves.png';
+$dropdown-graph-url:'../images/Dropdown_profile-Graph-Button.png';
+$delete-url: '../images/Delete.png';
+$logo-url: '../images/logo.png';
+$logo-small-url: '../images/logo_small.png';
+$logo-user-url: '../images/User.png';
+$profile-url: '../images/profileimg.png';
+$camera: '../images/allRecognitions/camera2-o.svg';
+$collaborator: '../images/allRecognitions/collaborator.png';
+$innovator: '../images/allRecognitions/innovator.png';
+$courageous: '../images/allRecognitions/peoplefirst.png';
+$curious: '../images/allRecognitions/curious.png';
+$agilelearner: '../images/allRecognitions/activelearner.png';
+$addyourown: '../images//allRecognitions/addyourown.png';
+$risktaker: '../images/allRecognitions/deliverimpact.png';
+$popularrecognisation: '../images/PopularRecognitions.png';
+$profile:'../images/allRecognitions/home-bgr-5.png';
+$tab1star: '../images/star-trophy.svg';
+$tab2people: '../images/people3.svg';
+$tab3setting: '../images/settings-o.svg';
+$dwoflogo: '../images/DWOF_logo.png';
+$spinner-small: '../images/spinner-small.gif';
+// fonts
+$roboto-regular: roboto-regular;
+$roboto-bold: roboto-bold;
+$roboto-light: roboto-light;
+$roboto-black: roboto-black;
+$roboto-italic: roboto-italic;
+$steel-blue: #2EB0EE;
+$slate-gray: #E6ECF5;
+$dark-gray: #4D4D4D;
+$light-gray: #CCCCCC;
+$off-gray: #F7F7F7;
+$off-white: #F4F4F4;
+$black: #000000;
+$white: #FFFFFF;
+$blanched-almond: #D8D2BC;
+$cornflower-blue: #2B90EE;
+$dark-blue: #0069CC;
+$darker-blue: #0079FF;
+$alice-blue: #F5F9FC;
+$white_rgb: rgb(255, 255, 255);
+$blue-darker_rgb: rgb(0, 61, 153);
+$light-red: #FFEBE8;
+$dark-red: #BC0B13;
+$warm-red: #FF0000;
+$medium-gray: #886330;
+$gray-blue: #18537F;
+$gray-black: #353331;
+$darker-red: #F25936;
+$steel-gray: #B2B2B2;
+$icon-color: #828282;
+$grey-dark: #444444;
+$grey: #666666;
+$mid-gray: #F0F0F0;
+$mild-gray: #E6E6E6;
+$background-gray: #E2E2E2;
+$lightest-gray: #EBEBEB;
+$blue: #0000FF;
+$link-blue: rgb(1,114,166);
+$badge-gray: rgb(102,102,102);
+$grey-mild:#767659;
+$light-green:#00cc00;
+//body
+$body-bg-color: $off-white;
+$prof-bg-color: $mild-gray;
+$greyish-black: #666666;
+$darkish-black: #333333;
+$underline-red: #c13b0f;
+$back-grey: #e2e2e2;
+$border-light-grey: #CFD0D0;
+//pagination
+$pagination-hover-bg: $steel-gray;
+$pagination-border-bg: $steel-gray;
+//variable for nav bar
+$nav-text-color: $white;
+$nav-bg-color: $dark-blue;
+$nav-active-color: $dark-blue;
+$caret-color: $white;
+$nav-header-text: R-W-18;
+$nav-header-active-text:RB-W-18;
+//buttons
+$button-bg-color: $darker-blue;
+$button-dl-color: $darker-red;
+$button-text-color: $white;
+$button-border-color: transparent;
+$button-mute-bg-color: $light-gray;
+$button-hover-color: $gray-blue;
+$button-pl-color: $mid-gray;
+//dropdown
+$dropdown-border-color: $light-gray;
+$dropdown-text-color: $white;
+$dropdown-bg-color: $dark-blue;
+//text colors
+$input-text-color: $dark-gray;
+$input-placeholder-color:$light-gray;
+$input-border-color: $darker-blue;
+$input-bg-color: $alice-blue;
+$search-text-color: $dark-gray;
+$search-fill-color: $off-white;
+$search-border-color: $light-gray;
+//panel
+$panel-header-bg-color:$steel-blue;
+$panel-header-border-color:transprent;
+$panel-header-text-color:$white;
+$alert-border-color: $dark-red;
+$alert-text-color: $dark-red;
+$alert-bg-color: $light-red;
+$panel-text-color: $dark-gray;
+$panel-border-color: $light-gray;
+$panel-bg-color: $white;
+//table
+$table-header-text: $white;
+$table-header-bg: $steel-blue;
+$table-odd-row-bg: $slate-gray;
+$table-even-row-bg: $white;
+//tabs
+$tab-blue:#0172A6;
+// font sizes
+//12,14,16,18,24,26,30,32
+
+/*$size-xs: 				0.75rem;
+$size-small: 			0.875rem;
+$size-par: 				1rem;
+$size-big: 				1.125rem;
+$size-xl: 				1.5rem;
+$size-xxl:				1.625rem;
+$size-xxxl: 			1.875rem;
+$size-bigger:			2rem;*/
+
+$size-xs: 12px;
+$size-small: 14px;
+$size-par: 16px;
+$size-big: 18px;
+$size-xl: 24px;
+$size-xxl: 26px;
+$size-xxxl: 30px;
+$size-bigger: 32px;
+$size-h1: 2.3rem;
+$size-h2: 1.875rem;
+$size-h3: 1.3rem;
+$size-h4: $size-big;
+$size-h5: $size-par;
+$size-h6: $size-small;
+//FOR CARD TEMPLATE
+$card-background-orange: #FFB500;
+$steel-black: #616161;
+$header-black: #333333;
+$badge-gray: #777777;
+$template-gray: #E6E6E6;
+//COLORS ADDED AS PER DWOF_TESTING FEEDBACK DEFECTS
+$rec-colleague-search-icon: #B3B3B3;

@@ -1,0 +1,21 @@
+table {
+	&.withBorder {
+		td, th {
+			padding: 2px 10px; 
+		}
+		th {
+			font-family: $roboto-bold;
+			color: $table-header-text;
+			background-color: $table-header-bg; 
+		}
+		td {
+			color: $dark-gray;
+		}
+		tr:nth-child(even) {
+			background: $table-even-row-bg;
+		}
+		tr:nth-child(odd) {
+			background: $table-odd-row-bg;
+			}
+	}
+}

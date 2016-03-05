@@ -1,0 +1,55 @@
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+
+@mixin twoColorVerticalGradient($color1_rgb, $color2_rgb, $color1_hex, $color2_hex) {
+	background: $color1_hex; /* old browsers */
+	background: -moz-linear-gradient(top, $color1_rgb 0%, $color2_rgb 100%); /* ff3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1_rgb), color-stop(100%,$color2_rgb)); /* chrome, safari4+ */
+	background: -webkit-linear-gradient(top, $color1_rgb 0%, $color2_rgb 100%); /* chrome10+. safari5.1+ */
+	background: -o-linear-gradient(top, $color1_rgb 0%, $color2_rgb 100%); /* opera 11.10+ */
+	background: linear-gradient(top bottom, $color1_rgb 0%, $color2_rgb 100%); /* w3c */
+	background: -ms-linear-gradient(top, $color1_rgb 0%,$color2_rgb 100%); /* ie10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1_hex', endColorstr='$color2_hex',GradientType=0); /* ie6-9 */
+}
+
+
+@mixin transition($property, $duration, $timing, $delay) {
+	-webkit-transition: $property $duration $timing $delay;
+	-moz-transition: $property $duration $timing $delay;
+	-o-transition: $property $duration $timing $delay;
+	transition: $property $duration $timing $delay; 
+}
+
+
+
+@mixin opacity($opacity) {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+	-moz-opacity: $opacity;
+	-khtml-opacity: $opacity;
+	opacity: $opacity;
+}
+
+@mixin image-background($background-image) {
+    background-image: url($background-image)!important;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+@mixin selectbox-background($background-image, $size) {
+    background-image: url($background-image)!important;
+    background-size: $size;
+    background-repeat: no-repeat;
+    background-position: center right 0.2em;
+}
+
+@mixin spinner-background($background-image, $size, $x, $y) {
+    background-image: url($background-image)!important;
+    background-size: $size;
+    background-repeat: no-repeat;
+    background-position: $x $y;
+}

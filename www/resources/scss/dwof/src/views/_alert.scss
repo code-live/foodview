@@ -1,0 +1,58 @@
+.recognize-alert-class{
+	-webkit-box-pack: center;
+	display: -webkit-inline-box;
+	.modal-dialog{
+		height: 13rem;
+		//width: 25% !important;
+    max-width:35rem !important;
+		margin : 25% auto 0 auto;
+	}
+	.modal-header{
+		padding: 0;
+		margin: 0;
+		border-bottom: 1px solid #e5e5e5 !important;
+		font-size : 1.85rem;
+		div{
+			font-family: Rotssa;
+			text-align: center;
+		}
+	}
+	.modal-body{
+		p{
+			font-family: Rotssa;
+			text-align: center;
+		}
+	}
+	.modal-footer{
+		text-align : center;
+    .alertCls {
+      background-color: transparent;
+      border: none;
+      color: black;
+      width : 100%;
+      padding: 0;
+      margin: 0;
+      float: left;
+      font-size: 1.75rem;
+      font-family: Rotssa;
+    }
+    .confirmCls {
+			background-color: transparent;
+			border: none;
+			color: black;
+			width: 50%;
+			padding: 0;
+			margin: 0;
+			float: left;
+			font-size: 1.75rem;
+			font-family: Rotssa;
+		}
+	}
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 767px) and (orientation: landscape) {
+	.recognize-alert-class{
+		.modal-dialog{
+			margin : 10% auto 0 auto;
+		}
+	}
+}

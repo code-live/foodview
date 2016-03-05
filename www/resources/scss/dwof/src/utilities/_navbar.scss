@@ -1,0 +1,54 @@
+//over written styles for header 
+.navbar-nav,.navbar-default
+{
+	@include border-radius(0);
+	/*@include text($nav-header-text,'single');*/
+	background-color: $nav-bg-color !important;
+	border:0;
+	.navbar-nav {
+		> .active > a,  > .active > a:hover,  > .active > a:focus, > li > a
+		{
+			color:$nav-text-color !important;
+			background-color: $nav-active-color !important;
+		}
+	}
+	.caret{
+		display : none;
+		color: $caret-color;
+	}
+	.active{
+		@include text($nav-header-active-text,'single')
+	}
+
+}
+@media (min-width: 750px){
+	.navbar-right{
+		margin-right: 0;
+	}
+	.navbar-nav,.navbar-default
+	{
+		>li > a{
+				padding-top:5px;
+  				padding-bottom:5px;
+  				margin-top:10px;
+  				margin-bottom:10px;
+		}
+
+		.active ,>a:focus,>a:hover{
+			.caret{
+				display:inline-block;
+  				margin-right: 45%;
+  				border-bottom: 7px dashed;
+  				border-right: 10px solid transparent;
+  				border-left: 10px solid transparent;
+  				border-top:0;
+  				float: right;
+			}
+		}
+		li:not(:last-child) a
+			{		
+  				border-right:1px solid $white;
+			}
+		}
+	}
+

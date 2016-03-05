@@ -1,0 +1,46 @@
+.collapsing {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	@include transition-property(height, visibility);
+	@include transition-duration(.5s);
+	@include transition-timing-function(ease);
+}
+
+
+.loader {
+	text-align:center;
+	color: $dark-blue;
+	text-align: center;
+	font-size: 5em;
+	.icon.ion-loading-c {
+		font-size:4rem;
+		padding:0px;
+		position:static;
+	}
+}
+
+.animate-fade.ng-hide-add {
+	-webkit-transition: all .1s ease;
+	transition: all .1s ease;
+	opacity: 1;
+}
+
+.animate-fade.ng-hide-add-active {
+	opacity: 0;
+}
+
+/* Action we're showing */
+.animate-fade.ng-hide-remove {
+	-webkit-transition: all .1s ease .3s;
+	transition: all .1s ease .3s;
+	opacity: 0;
+}
+
+.animate-fade.ng-hide-remove-active {
+	opacity: 1;
+}
+
+.animate-fade.ng-hide-add, .animate-fade.ng-hide-remove {
+	display: block !important;
+}

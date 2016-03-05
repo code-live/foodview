@@ -1,0 +1,75 @@
+// toc 
+.list-group-item {
+	padding: 0px; 
+	a {
+		padding: 10px 15px; 
+		display: block; 
+		width: 100%; 
+		color: $dark-gray; 
+		background-color: $white; 
+		&:hover {
+			background-color: $slate-gray; 
+			color: $dark-gray; 
+		}
+	}
+}
+
+.colorBlock {
+	min-height: 100px;
+	border: 1px solid $dark-gray;
+	@include border-radius(5px);
+	padding: 5px; 
+	width: 100%;
+	color: $white; 
+	font-family: $roboto-bold; 
+	font-size: 0.8em;
+	text-transform: lowercase;
+	margin-bottom: 15px;
+	&.invertText {
+		color: $dark-gray; 
+	}
+	span {
+		display: block; 
+		&:nth-of-type(3n) {
+			margin-bottom: 10px; 
+		}
+		&:nth-of-type(3n+1) {
+			text-decoration: underline;
+		}
+	}
+}
+
+
+hr.dividerLighter {
+	border-color: rgba($white_rgb,.35);
+}
+
+
+// style guide 
+.styleGuide {
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+
+	// margin-bottom: 300px;
+}
+
+.eduText.clps {
+	&:after {
+		content: ' \0002B';
+	}
+	&.open:after {
+		content: ' \02212';
+	}
+}
+
+.error.relative {
+	position: relative; 
+	top: 0; 
+	margin-left: 0; 
+	margin-right: 0;  
+}
+.highlighted {
+	background-color: $light-gray;
+}

@@ -1,0 +1,65 @@
+
+.big {
+	@include text('R-W-18','single');
+}
+
+.small {
+	@include text('R-W-14','single');
+}
+.xs {
+	@include text('R-W-12','single');
+}
+.xl {
+	@include text('R-W-24','single');
+}
+.xxl {
+	@include text('R-MG-26','single');
+}
+.xxxl {
+	@include text('R-DB-30','single');
+}
+.bigger {
+	@include text('L-MG-32','single');
+}
+.par {
+	@include text('R-W-16','single');
+}
+.em, .i { 
+	font-family: $roboto-italic; 
+}
+
+.strong, .b { 
+	font-family: $roboto-bold; 
+}
+.black-bold{
+	font-family: $roboto-black; 
+}
+.regular{
+	font-family: $roboto-regular; 
+}
+.light{
+	font-family: $roboto-light; 
+}
+
+.darker-blue{
+	color: $darker-blue;
+}
+
+.blanched-almond{
+	color: $blanched-almond;
+}
+.dark-blue{
+	color: $dark-blue;
+}
+.dark-red{
+	color: $dark-red;
+}
+.dark-gray{
+	color: $dark-gray;
+}
+.off-white{
+	color: $off-white;
+}
+.light-gray{
+	color: $light-gray;
+}

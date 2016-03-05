@@ -1,0 +1,66 @@
+//included for icons
+@font-face {
+	font-family: 'dwof';
+	src:url('../fonts/icons/dwof.eot?-okjbw1');
+	src:url('../fonts/icons/dwof.eot?#iefix-okjbw1') format('embedded-opentype'),
+		url('../fonts/icons/dwof.ttf?-okjbw1') format('truetype'),
+		url('../fonts/icons/dwof.woff?-okjbw1') format('woff'),
+		url('../fonts/icons/dwof.svg?-okjbw1#dwof') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+//rotssa normal
+@font-face {
+	font-family: 'Rotssa';
+	src:url('../fonts/Rotssa/rotssa/rotssa.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Rotssa/rotssa/rotssa.ttf') format('truetype'),
+		url('../fonts/Rotssa/rotssa/rotssa.woff') format('woff'),
+		url('../fonts/Rotssa/rotssa/rotssa.svg') format('svg'),
+		url('../fonts/Rotssa/rotssa/rotssa.otf') format('opentype');
+}
+//rotssa bold
+@font-face {
+	font-family: 'Rotssab';
+	src:url('../fonts/Rotssa/rotssa-bold/rotssab.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Rotssa/rotssa-bold/rotssab.ttf') format('truetype'),
+		url('../fonts/Rotssa/rotssa-bold/rotssab.woff') format('woff'),
+		url('../fonts/Rotssa/rotssa-bold/rotssab.svg') format('svg'),
+		url('../fonts/Rotssa/rotssa-bold/rotssab.otf') format('opentype');
+}
+//rotssa light
+@font-face {
+	font-family: 'Rotssa-Light';
+	src:url('../fonts/Rotssa/rotssa-light/rotssal.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Rotssa/rotssa-light/rotssal.ttf') format('truetype'),
+		url('../fonts/Rotssa/rotssa-light/rotssal.woff') format('woff'),
+		url('../fonts/Rotssa/rotssa-light/rotssal.svg') format('svg'),
+		url('../fonts/Rotssa/rotssa-light/rotssal.otf') format('opentype');
+}
+//rotssa italic
+@font-face {
+	font-family: 'Rotssai';
+	src:url('../fonts/Rotssa/rotssa-italic/rotssai.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Rotssa/rotssa-italic/rotssai.ttf') format('truetype'),
+		url('../fonts/Rotssa/rotssa-italic/rotssai.woff') format('woff'),
+		url('../fonts/Rotssa/rotssa-italic/rotssai.svg') format('svg'),
+		url('../fonts/Rotssa/rotssa-italic/rotssai.otf') format('opentype');
+}
+//rotssa light italic
+@font-face {
+	font-family: 'Rotssa-LightItalic';
+	src:url('../fonts/Rotssa/rotssa-lightItalic/rotssali.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Rotssa/rotssa-lightItalic/rotssali.ttf') format('truetype'),
+		url('../fonts/Rotssa/rotssa-lightItalic/rotssali.woff') format('woff'),
+		url('../fonts/Rotssa/rotssa-lightItalic/rotssali.svg') format('svg'),
+		url('../fonts/Rotssa/rotssa-lightItalic/rotssali.otf') format('opentype');
+}
+//rotssa exbold
+@font-face {
+	font-family: 'Rotssa-ExBd';
+	src:url('../fonts/Rotssa/rotssa-exbold/rotssaxb.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Rotssa/rotssa-exbold/rotssaxb.ttf') format('truetype'),
+		url('../fonts/Rotssa/rotssa-exbold/rotssaxb.woff') format('woff'),
+		url('../fonts/Rotssa/rotssa-exbold/rotssaxb.svg') format('svg'),
+		url('../fonts/Rotssa/rotssa-exbold/rotssaxb.otf') format('opentype');
+}

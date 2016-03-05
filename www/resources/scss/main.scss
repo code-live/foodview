@@ -1,0 +1,317 @@
+//$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+//@import "../bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import "dwof/src/utilities/fonts";
+@import "dwof/var/variables";
+
+@import "dwof/mixins/mixins";
+@import "dwof/src/utilities/icons";
+@import "dwof/src/utilities/text";
+@import "dwof/src/utilities/styleGuide";
+@import "dwof/src/utilities/dropdown";
+@import "dwof/src/utilities/global";
+@import "dwof/src/utilities/animations";
+@import "dwof/src/utilities/modals";
+@import "dwof/src/utilities/type";
+@import "dwof/src/utilities/linksAndButtons";
+@import "dwof/src/utilities/wellsAndPanels";
+@import "dwof/src/utilities/navbar";
+@import "dwof/src/utilities/tables";
+@import "dwof/src/utilities/forms";
+@import "dwof/src/utilities/datatable";
+@import "dwof/src/utilities/footer";
+
+@import "dwof/src/views/header";
+@import "dwof/src/views/common";
+@import "dwof/src/views/home";
+@import "dwof/src/views/profile";
+@import "dwof/src/views/peoplepicker";
+@import "dwof/src/views/carddetail";
+@import "dwof/src/components/customVariables";
+@import "dwof/src/components/corporateFonts";
+@import "dwof/src/components/componentizr-modal";
+@import "dwof/src/components/acc-icons";
+@import "dwof/src/components/general";
+@import "dwof/src/components/cards";
+@import "dwof/src/components/style";
+@import "dwof/src/components/streamify";
+@import "dwof/src/components/widgify2.0.min";
+@import "dwof/src/components/angular-widgify.min";
+@import "dwof/src/components/ng-tag-input/ng-tags-input.bootstrap";
+@import "dwof/src/components/ng-tag-input/ng-tags-input";
+@import "dwof/src/components/toolbar";
+@import "dwof/src/components/layout";
+@import "dwof/src/views/spinner";
+@import "dwof/src/views/alert";
+@import "dwof/src/views/card-ui";
+@import "dwof/src/views/spinnerBackdrop";
+@import "dwof/src/responsive/homeResponsive";
+@import "dwof/src/responsive/card-uiResponsive";
+@import "dwof/src/views/flashmessage";
+@import "dwof/src/views/leaderboard";
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+
+.header, .marketing, .footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  //margin-bottom: 10px;
+  /* Make the masthead heading the same height as the navigation */
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+
+.marketing {
+  margin: 40px 0;
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+  /* Remove the padding we set earlier */
+
+  .header, .marketing, .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+
+  .header {
+    //margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.small-img {
+  width: 25px !important;
+  display: block;
+  max-width: 100%;
+  height: 25px;
+}
+
+.big-image-ui {
+  padding-top: 0.25rem !important;
+}
+
+.horizontal-line {
+  border-bottom: 1px solid #E6E6E6 !important;
+}
+
+.recognizer-card-layout {
+  padding: 0 !important;
+}
+
+.social-actions-layout {
+  padding: 10px 0;
+  .row {
+    div {
+      padding: 0 20px 0 0;
+      display: table-cell;
+    }
+    &.stream-ui {
+      margin: 0 0 0 10px;
+      height: 0;
+      display: table;
+      .button {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        text-align: left;
+        color: #666;
+        min-height: 20px;
+        line-height: 19px;
+        display: table-cell;
+        font-size: 12px;
+        font-family: arial;
+        margin-bottom: 10px;
+        i, span {
+          font-size: 20px;
+          color: #666;
+          vertical-align: middle;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.skill-type-ui {
+  padding: 1rem;
+  background-color: #FFB500;
+  text-transform: uppercase;
+  font-family: Arial;
+}
+
+.reason-ui {
+  padding: 4% 4% 4% 7%;
+}
+
+.home-view {
+  width: 100% !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  //margin-top: 50px !important;
+}
+
+.popular-rec-row {
+  padding: 3%;
+  padding-left: 7% !important;
+  .Reconginzer {
+    padding: 4% 0%;
+  }
+}
+
+//FOR CAROUSEL
+.carousel-control.right {
+  background-image: none;
+}
+
+.carousel-control.left {
+  background-image: none;
+}
+
+.carousel-indicators {
+  //position: relative;
+  bottom: 0;
+}
+
+.container-fluid {
+  .acc-thing {
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 1px;
+  margin-left: 3px !important;
+  text-indent: -999px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white !important;
+}
+
+.carousel-inner {
+  //width: 80%;
+  width: 82.5%;
+  margin: auto;
+}
+
+.name-font {
+  font-size: 13px;
+  white-space: inherit;
+}
+
+//FOR CARD
+.acc-thing .item .identifier {
+  margin: 0 !important;
+}
+
+.carousel-indicators .active {
+  background-color: yellow !important;
+}
+
+.identifier.rounded.icon.icon-class {
+  left: 1% !important;
+}
+
+.acc-thing {
+  .item {
+    //padding-top: 20px;
+    &.with-identifier {
+      padding-left: 60px;
+      padding-bottom: 6%;
+      min-height: 80px;
+    }
+  }
+}
+
+.acc-thing .item.with-identifier {
+  padding-left: 35px;
+}
+
+:focus {
+  outline: transparent !important;
+}
+
+
+
+// fix for profile stream modal issue
+.widgify-main {
+  clear: both;
+}
+
+input[type=search]::-ms-clear {
+   display: none;
+}
+.main-body{
+  overflow-y: hidden;
+}
+.remove-body{
+  overflow-y: scroll;
+}

@@ -1,0 +1,171 @@
+/* _text.scss */
+// This files is for font definitions and text flow control.
+// Use the text() mixin in your component/functionality rules
+
+
+// === PLATFORM VARIATION ===
+
+
+
+
+// === PUBLIC ===
+
+// This is only function you should need to call from outside this file!
+@mixin text($label, $multi-line) {
+  @include font-label($label);
+  @include text-lines($multi-line);
+}
+
+
+
+
+// ==== DATA ===
+
+// label, font-weight, font-size, color, text-shadow
+  
+  
+
+$pixel-em-convert : 16;
+$adjustment-factor : 1;
+
+$font-data: (
+  //component TransactionsCardInfo Font size start 
+ 
+  ('R-W-12',$size-xs,$white,$roboto-regular),
+  ('R-W-14',$size-small,$white,$roboto-regular),
+  ('R-DG-14',$size-small,$dark-gray,$roboto-regular),
+  ('R-MG-14',$size-small,$medium-gray,$roboto-regular),
+  ('R-W-16',$size-par,$white,$roboto-regular),
+  ('R-DG-16',$size-par,$dark-gray,$roboto-regular),
+  ('R-LG-16',$size-par,$light-gray,$roboto-regular),
+  ('R-B-16',$size-par,$black,$roboto-regular),
+  ('R-DB-16',$size-par,$darker-blue,$roboto-regular),
+  ('R-W-18',$size-big,$white,$roboto-regular),
+  ('R-DG-18',$size-big,$dark-gray,$roboto-regular),
+  ('R-MG-18',$size-big,$medium-gray,$roboto-regular),
+  ('R-B-18',$size-big,$black,$roboto-regular),
+  ('RB-W-18',$size-big,$white,$roboto-black),
+  ('R-W-24',$size-xl,$white,$roboto-regular),
+  ('R-MG-26',$size-xxl,$medium-gray,$roboto-regular),
+  ('R-DB-30',$size-xxxl,$darker-blue,$roboto-regular),
+  ('L-MG-32',$size-bigger,$medium-gray,$roboto-regular));
+
+
+// === PRIVATE ===
+@mixin increase-font-media-query($font-size){
+  @media screen and (min-device-height: 575px) and (min-device-width: 350px) {
+        font-size : $font-size;
+  }
+}
+@mixin font-of-inner-container($outer-container-font-label, $inner-container-font-label,$multi-line, $just-font-size) {
+  @if $just-font-size != 1 {
+    @include text($inner-container-font-label,$multi-line);
+  }
+  $outer-size : 0;
+  $inner-size : 0;
+  // Rest is adusting the font size
+  @each $font in $font-data {
+    @if length($font) != 4 and length($font) != 5 and length($font) != 6{
+      // We expect the table rows to have 4 or 5 items
+      @warn "Font data table corrupted";
+    }
+    $label: nth($font, 1);  // in SASS, list indices begin at 1
+    @if $label == $outer-container-font-label {
+      $outer-size : nth($font, 2) ;
+    }
+
+    @if $label == $inner-container-font-label {
+      $inner-size : nth($font, 2) ;
+    }
+  }
+  @if $outer-size != 0 and $inner-size != 0 {
+    font-size : $inner-size/$outer-size * 1em;
+    @include increase-font-media-query($inner-size/$outer-size * 1em);
+    body.bbz10-body & { 
+        font-size: $inner-size/$outer-size * 1em;
+    }
+  } @else {
+    font-size : 0;
+  } 
+}
+// Generate the CSS for a named font
+@mixin font-label($font-label) {
+  $found: false;
+  @each $font in $font-data {
+    @if length($font) != 4 and length($font) != 5 and length($font) != 6{
+      // We expect the table rows to have 4 or 5 items
+      @warn "Font data table corrupted";
+    }
+    $label: nth($font, 1);  // in SASS, list indices begin at 1
+    @if $font-label == $label {
+      $found: true;
+      font-family: nth($font, 4);
+      font-size: nth($font, 2) ;
+      color: nth($font, 3);
+    }
+  }
+  @if not $found {
+    @warn "Invalid font label specified: #{$font-label}";
+  }
+}
+
+// Generate the CSS for a named line-mode
+@mixin text-lines($lines) {
+  @if $lines == 'multi' {
+    // The container will expand vertically as needed, by going multi-line.
+    // Strings will never overflow the container horizontally.
+    // Words that exceed a single line will break mid-word.
+    // Suggestions of &shy; and <wbr> will be taken if needed.
+    word-wrap: break-word;  // Split single words that are simply too big
+    //-webkit-hyphens: auto;  // Attempt enhanced hyphenation if brwowser supports it
+    white-space: pre-wrap;  // Consider tabs and spaces as important/intentional
+    overflow: visible;      // Default, but important
+    word-break: break-word;     // Default, but important
+    text-overflow: ellipsis;
+  }
+  @else if $lines == 'single' {
+    // Single-line string.
+    // String will not overflow the container horizontally.
+    // String will ellipsize if needed.
+    overflow: hidden;       // Don’t show out-of-bounds content
+    text-overflow: ellipsis;// Enable ellipsis on overflow  
+    //white-space: pre;      // Consider tabs and spaces as important/intentional
+    word-wrap: normal;     // Default, but important
+  }
+  @else {
+    @warn "Invalid text lines specified: #{$lines}";
+  }
+}
+
+
+// Generate concrete CSS rules for all (line-mode,font-label) pairs
+@each $font in $font-data {
+  $label: nth($font, 1);
+  @each $line-mode in ('multi', 'single') {
+    .text-#{$line-mode}-#{$label} {
+      @include text($label, $line-mode);
+    }
+  }
+}
+
+// Private function for assisting _distance.scss
+@function text-height($font-label) {
+  @each $font in $font-data {
+    $label: nth($font, 1);  // in SASS, list indices begin at 1
+    @if $font-label == $label {
+      @return nth($font, 2) ;
+    }
+  }
+  @warn "Invalid font label specified: #{$font-label}";
+}
+
+//calculating font pixel to rem
+@function calculateRem($size) {
+  $remSize: ($size+4) / 12px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  //font-size: $size;
+  font-size: calculateRem($size);
+}

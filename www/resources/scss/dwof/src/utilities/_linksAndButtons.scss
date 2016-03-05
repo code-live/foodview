@@ -1,0 +1,96 @@
+/* link */
+a {
+	color: $dark-gray;
+	text-decoration: none;
+	font-size: 1em;
+	&:hover {
+		cursor: pointer;
+		color: $dark-gray;
+		text-decoration: underline;
+	}
+	&.disabled, &.cancel {
+		color: $light-gray;
+		&:hover {
+			color: $gray-lighter; 
+			cursor: default; 
+			text-decoration: none; 
+		}
+	}
+	&.cancel {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+/*dropdown*/
+.btn-group{
+	border: 1px solid $dropdown-border-color;
+  	background-color: $dropdown-bg-color;
+  	@include border-radius(2px);
+  	button{
+  		padding:0 15px;
+  		@include border-radius(0px);
+  		background-color: $dropdown-bg-color;
+  		border: 0;
+  		&:hover, &:focus, &:active, &:focus:active, &.active, &.active:focus {
+		background-color: $dropdown-bg-color;
+	}
+
+  	}
+  	> .btn:first-child:not(:last-child):not(.dropdown-toggle){
+  		border-right: 2px solid $dropdown-border-color;
+
+  	}
+}
+/* buttons */
+button, .btn {
+	padding: 10px 15px;
+	margin: 10px 0;
+	background-color: $button-bg-color;
+	border: 1px solid $button-bg-color;
+	@include border-radius(2px);
+	font-family: $roboto-bold;
+	color: $button-text-color;
+	&:hover{
+		opacity : .7;
+	}
+	&:hover, &:focus, &:active, &:focus:active, &.active, &.active:focus {
+		background-color: $button-hover-color;
+		border: 1px solid $button-border-color;
+		color: $white;
+		outline: none;
+		box-shadow: none;
+	}
+	&.alignCenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&.mute-button{
+		background-color: $button-mute-bg-color;
+		border:0;
+	}
+	&.form-button-width { width: 160px; }
+	&.detail-button-width { width: 120px; }
+	&.full-width { width: 100%;@include border-radius(5px); }
+	&.callToAction, &.call-to-action {
+		background-color: transparent;
+		border-color: $white;
+		font-size: 1.125em;
+		padding: 6px 20px;
+		.panel & {
+			border-color: $dark-blue;
+			color: $dark-blue;
+		}
+		&:hover {
+            color: $white;
+            text-decoration: none;
+
+		}
+		&.grayOutline {
+			border-color: $dark-gray;
+			color: $dark-gray;
+		}
+	}
+}

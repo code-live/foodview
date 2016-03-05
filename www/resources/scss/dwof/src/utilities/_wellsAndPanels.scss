@@ -1,0 +1,87 @@
+.well, .panel {
+	a {
+		color: $panel-text-color; 
+	}
+}
+
+.well {
+	background-color: $panel-bg-color; 
+	color: $panel-text-color;
+	@include border-radius(2px);
+	border: 1px solid $panel-border-color; 
+}
+.alert{
+	@include border-radius(2px); 
+	background-color: $alert-bg-color; 
+	color: $alert-text-color;
+	border:2px solid $alert-border-color; 
+}
+
+.panel {
+	color: $panel-text-color;
+	position: relative;  
+	@include border-radius(0px); 
+	&.withMargin {
+		margin: 0 10px 10px;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 0;
+		margin-bottom: 0;
+		&:first-of-type { margin-top: 0; }
+	}
+	a {
+		text-decoration: none;
+
+		&.btn, &.button {
+			text-decoration:none;
+			
+		}
+	}
+	
+	input[type="text"], textarea {
+		border: 1px solid $input-border-color;
+
+		&.has-error {
+			border:2px solid $alert-border-color;
+		}
+	}
+	.textareaContainer {
+		border-color: $input-border-color;
+		&.has-error {
+			border: 2px solid $alert-border-color;
+		}
+	}
+	.textareaContainer textarea {
+		&:focus {
+			border: none; 
+		}
+	}
+
+	.panel-heading {
+		border-bottom: 1px solid $panel-header-border-color;
+		background-color: $panel-header-bg-color;
+		color: $panel-header-text-color;
+		@include border-radius(0px); 
+		
+		h1, h2, h3, h4, h5, h6, p {
+			white-space: nowrap;
+			overflow: hidden; 
+			text-overflow: ellipsis;
+		}
+		p { margin-bottom: 0; }
+	}
+	.panel-heading, .panel-body, .panel-footer {
+		padding: 6px 10px 8px 10px; 
+	}
+	.panel-collapse {
+		.panel-body { padding: 0 10px 10px; }
+	}
+	.panel-footer {
+		background-color: $panel-border-color; 
+		border-top: 1px solid $panel-border-color;
+	}
+}
+
+.panel-group {
+	.panel { @include border-radius(2px); }
+}

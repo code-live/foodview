@@ -1,0 +1,252 @@
+<div class="menu-items">
+    <div flash-message="5000" ></div>
+    <div class="content" ng-class="{'sidenav-open': tgState}">
+        <div class="header">
+            <div id="bannerId" class="for-top-nav bannerImg" ng-init="refreshNotificationCount()">
+                <div class="row device-specific-cls hide-element-in-device">
+                    <div class="hamburger-for-mobile-device" ng-init="init()">
+                        <div ng-init="navCollapsed = true" class="accIcon acc-menu hamburger-menu" ng-click="toggleMenu($event)">
+                            <div collapse="navCollapsed" class="nav-collapse collapse navbar-responsive-collapse hamburger-menu-ui">
+                                <div class="sidenav" ng-class="{open: tgState}">
+                                    <ul class="nav">
+                                        <p class="menu-text" ng-click="goToAllRecognitions()"><span>{{'header.all-recognitions' | i18n}}</span></p>
+                                        <p class="menu-text about" ng-click="goToAbout()"><span>{{'header.about' | i18n}}</span></p>
+                                        <footer class="profile-footer" ng-click="gotoProfile()">
+                                            <div ng-style="{'background-image': 'url(' + profileImage + ')'}" class="img-menu"></div>
+                                            <h1 class="menuName">{{profilePageData.FirstName + " " +profilePageData.LastName}}</h1>
+                                        </footer>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-wof-onscroll hidden-sm hidden-md hidden-lg" ng-show="headerWofLabel">
+                        <center><div class="header-title-text">Wall of Fame</div></center>
+                    </div>
+                    <div class="notification-for-mobile-device hidden-sm hidden-md hidden-lg">
+                        <button class="RecognizeBtn header-recognise-btn hide-element-in-desktop" ng-show="showRecogniseBtn" ng-click="open()">RECOGNIZE A COLLEAGUE
+                        </button>
+						<i class="appIcon icon-search header-search search-icon-align" type="button" ng-click="searchRecords()"></i>
+						<i class="acc-icons acc-menu-squares-condensed waffle-icon-align" type="button" data-toggle="dropdown"></i>
+						<ul class="dropdown-menu menu-alignment" ng-class="{true:'waffle-menu-androidPhone',false:''}[androidDevice]">
+						<li class="waffle-menu"><a href="https://circles.accenture.com/B6CD2779-0B9A-4FFE-8E59-EB3C6229F259#1" target="_blank">DWOF Support Circle</a></li>
+						<li class="waffle-menu"><a href="https://recognitionandawards.accenture.com/" target="_blank">R&amp;A site</a></li>
+						<li class="waffle-menu"><a href="https://support.accenture.com/applications/mdm/pages/accentureappcatalog.aspx" target="_blank">DWOF mobile app</a></li>
+            <li class="waffle-menu"><a href="https://circles.accenture.com/B6CD2779-0B9A-4FFE-8E59-EB3C6229F259#3" target="_blank">Rewards Criteria</a></li>
+						</ul>
+                        <i class="accIcon acc-bell bellIcon bell-align" ng-click="showModalNotification()">
+                            <span ng-if="notificationCount>0 && notificationCount<10 " ng-class="{true:'ie10-uisingle',false:'other-uisingle'}[ie10]">{{notificationCount}}</span>
+							<span ng-if="notificationCount>9" ng-class="{true:'ie10-ui',false:'other-ui'}[ie10]">{{notificationCount}}</span>
+                        </i>
+
+                        <div ng-style="{'background-image': 'url(' + profileImage + ')'}" ng-click="gotoProfile()"
+                             class="img-circle pull-right hide-element-in-desktop"></div>
+                    </div>
+                </div>
+                <div class="logo-container-for-device hide-element-in-device">
+                    <div class="header-logo" ng-click="gotoHomepage()"></div>
+                </div>
+                <div class="row header-text-wof hide-element-in-device">
+                    <div class="header-title-text">Wall of Fame</div>
+                </div>
+                <div class="row Heading">
+                    <div class="col-xs-6 col-sm-6 col-lg-4 col-md-6 removePaddingLeftHome">
+                        <div class="logo-container visible-sm hidden-md hidden-lg">
+                            <div class="header-logo" ng-class="{true:'header-logo-hide',false:'header-logo-show'}[openInput]" ng-click="gotoHomepage()"></div>
+                        </div>
+						 <div class="logo-container visible-md hidden-sm hidden-lg">
+                            <div class="header-logo" ng-class="{true:'header-logo-hide',false:'header-logo-show'}[openInput]" ng-click="gotoHomepage()"></div>
+                        </div>
+                        <div class="logo-container visible-lg hidden-sm hidden-md">
+                            <div class="header-logo" ng-class="{true:'header-logo-hide',false:'header-logo-show'}[openInput]" ng-click="gotoHomepage()"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="header-title-text visible-sm hidden-lg hidden-md"  ng-class="{true:'header-title-text-search-sm',false:''}[openInput]" >Wall of Fame</div>
+						<div class="header-title-text visible-md hidden-sm hidden-lg"  ng-class="{true:'header-title-text-search-md',false:''}[openInput]" >Wall of Fame</div>
+						<div class="header-title-text visible-lg hidden-sm hidden-md"  ng-class="{true:'header-title-text-search-lg',false:''}[openInput]" >Wall of Fame</div>
+                    </div>
+                </div>
+                <div class="notification-div hide-element-in-desktop">
+                    <div class="sideIcons">
+                        <button class="RecognizeBtn header-recognise-btn" ng-hide="openInput==true || !showRecogniseBtn" ng-click="open()">RECOGNIZE A COLLEAGUE
+                        </button>
+						
+						<span class="visible-sm hidden-md hidden-lg search-div-sm" style="float:left;" ng-if="openInput==true">
+							<!--<input type="text" placeholder="Search for recognitions" ng-model="search.listdata" class="search-input-sm" ng-keyup="getAllSearchRecognitionData($event)">-->
+							<div class="menu-header-bar">
+
+                                <div id="scrollable-dropdown-menu" class="recognizecollegue"
+                                     style="width: 90%;margin-left: 1em;">
+                                    <div class="left-inner-addon search-template">
+                                    <div class="rec-col-placeholder rec-ul-sm">
+                                        <input type="search" name="custom" id="search-id" ng-model="customSelected" ng-keyup="enterEvent($event,customSelected)"
+                                               placeholder="Search people or recognitions" onfocus="this.placeholder = ''"
+                                               onblur="this.placeholder = 'Search people or recognitions'"
+                                               typeahead="value as value for value in getAllSearchRecognitionData($viewValue)"
+                                               typeahead-template-url="{{searchTemplateURL}}"
+											   typeahead-focus-first="false"
+                                               class="search-title-sm search-collegue-input-box search-field-input search-input-sm" typeahead-min-length="2"
+                                               typeahead-loading="loadingLocations" typeahead-no-results="noResults"
+                                               typeahead-on-select="tapToSelect(customSelected)"/>
+                                               <span ng-if="noResults && customSelected.length > 1 && onEnterResultFlag" dropdown dropdown-toggle auto-close="disabled" is-open="true">
+                                                  <ul class="dropdown-menu dropdown-setting">
+                                                    <li><a href>No Results Found</a></li>
+                                                  </ul>
+                                                </span>
+                                        <span class="acc-cross search-sm-cross-icon" ng-class="{'lg':'search-cross-icon','md':'search-cross-icon','sm':'search-cross-icon'}[isCurrent]" ng-click="clearSearch()"></span>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+						</span>
+						<span class="visible-md hidden-sm hidden-lg search-div-md" style="float:left;" ng-if="openInput==true">
+							<!--<input type="text" placeholder="Search for recognitions" ng-model="search.listdata" class="search-input-md" ng-keyup="getAllSearchRecognitionData($event)">-->
+                        <div class="menu-header-bar">
+
+                            <div id="scrollable-dropdown-menu" class="recognizecollegue"
+                             style="width: 80%;">
+                            <div class="left-inner-addon search-template">
+                                <span class="rec-col-placeholder">
+                                <input type="search" name="custom" id="search-id" ng-model="customSelected" ng-keyup="enterEvent($event,customSelected)"
+                                       placeholder="Search for people, key word or recognitions" onfocus="this.placeholder = ''"
+                                       onblur="this.placeholder = 'Search for people, key word or recognitions'"
+                                       typeahead="value as value for value in getAllSearchRecognitionData($viewValue)"
+                                       typeahead-template-url="{{searchTemplateURL}}"
+									    typeahead-focus-first="false"
+                                       class="search-title form-control search-collegue-input-box search-field-input search-input-md" typeahead-min-length="2"
+                                       typeahead-loading="loadingLocations" typeahead-no-results="noResults"
+                                       typeahead-on-select="tapToSelect(customSelected)"/>
+                                       <span ng-if="noResults && customSelected.length > 1 && onEnterResultFlag" dropdown dropdown-toggle auto-close="disabled" is-open="true">
+                                          <ul class="dropdown-menu dropdown-setting">
+                                            <li><a href>No Results Found</a></li>
+                                          </ul>
+                                        </span>
+<!--                                        <div ng-show="noResults">
+                                        <i class=""></i> No Results Found12344
+                                       </div> -->
+                                </span>
+                            </div>
+                            </div>
+                        </div>
+                            <div class="acc-cross lg-icon" ng-class="{'lg':'search-cross-icon','md':'lg-icon','sm':'search-cross-icon'}[isCurrent]" ng-click="clearSearch()"></div>
+							</input>
+						</span>
+						<span class="visible-lg hidden-sm hidden-md search-div-lg" style="float:left;" ng-if="openInput==true">
+							<!--<input type="text" placeholder="Search for recognitions" ng-model="search.listdata" class="search-input" ng-keyup="getAllSearchRecognitionData($event)">-->
+                         <div class="menu-header-bar">
+
+                             <div id="scrollable-dropdown-menu" class="recognizecollegue"
+                                  style="width: 80%;">
+                                 <div class="left-inner-addon search-template">
+                                <span class="rec-col-placeholder rec-ul-lg">
+                                <input type="search" name="custom" id="search-id" 
+                                       ng-model="customSelected" 
+                                       ng-keyup="enterEvent($event,customSelected)"
+                                       placeholder="Search for people, key word or recognitions"
+                                       onfocus="this.placeholder = ''"
+                                       onblur="this.placeholder = 'Search for people, key word or recognitions'"
+                                       typeahead="value as value for value in getAllSearchRecognitionData($viewValue)"
+                                       typeahead-template-url="{{searchTemplateURL}}"
+										typeahead-focus-first="false"
+                                       class="search-title form-control search-field-input search-input search-collegue-input-box"
+									   ng-class="{true:'search-collegue-input-box-ie',false:''}[ie10]"
+                                       typeahead-min-length="2"
+                                       typeahead-loading="loadingLocations"
+                                       typeahead-no-results="noResults"
+                                       typeahead-on-select="tapToSelect(customSelected)"/>
+                                       <span ng-if="noResults && customSelected.length > 1 && onEnterResultFlag" dropdown dropdown-toggle auto-close="disabled" is-open="true">
+                                          <ul class="dropdown-menu dropdown-setting">
+                                            <li><a href>No Results Found</a></li>
+                                          </ul>
+                                        </span>
+                                </span>
+                                 </div>
+                             </div>
+                         </div>
+                            <div class="acc-cross search-cross-icon" ng-class="{'lg':'search-cross-icon','md':'lg-icon','sm':'search-cross-icon'}[isCurrent]" ng-click="clearSearch()"></div>
+							</input>
+						</span>
+
+
+						<i class="appIcon icon-search header-search" ng-class="{true:'header-search-ie',false:''}[ie10]" type="button" ng-click="showInput()"></i>
+						<i class="acc-icons acc-menu-squares-condensed" type="button" data-toggle="dropdown"></i>
+						<ul class="dropdown-menu menu-alignment" ng-class="{true:'waffle-menu-androidTablet',false:''}[androidDevice]">
+						<li class="waffle-menu"><a href="https://circles.accenture.com/B6CD2779-0B9A-4FFE-8E59-EB3C6229F259#1" target="_blank">DWOF Support Circle</a></li>
+						<li class="waffle-menu"><a href="https://recognitionandawards.accenture.com/" target="_blank">R&amp;A site</a></li>
+						<li class="waffle-menu"><a href="https://support.accenture.com/applications/mdm/pages/accentureappcatalog.aspx" target="_blank">DWOF mobile app</a></li>
+            <li class="waffle-menu"><a href="https://circles.accenture.com/B6CD2779-0B9A-4FFE-8E59-EB3C6229F259#3" target="_blank">Rewards Criteria</a></li>
+						</ul>
+                        <span>
+						<i class="accIcon acc-bell bellIcon bell-align" ng-class="{true:'ie-910-ui',false:''}[ie10]"
+                           id="notificationDropdown" data-toggle="dropdown">
+                            <span ng-if="notificationCount>0 && notificationCount<10"
+                                  ng-class="{true:'ie10-uisingle',false:'other-uisingle'}[ie10]">{{notificationCount}}</span>
+                            <span ng-if="notificationCount>9" ng-class="{true:'ie10-ui',false:'other-ui'}[ie10]">{{notificationCount}}</span>
+                        </i>
+                        <div class="dropdown-menu notification-alignment" aria-labelledby="notificationDropdown">
+                            <div class="notification-menu-header clearBtnWrapper">Notifications
+                                <span ng-if="notificationCount!=0">
+                                    <!--<i id='notificationCrossIcon' class="appIcon icon-close notificationClearCrossBtn" ng-if="!clearAllFlag" ng-click="crossIconTap()"></i>-->
+                                    <button id='notificationCrossIcon' class="notificationClearCrossBtn" ng-if="!clearAllFlag" ng-click="crossIconTap()">X</button>
+                                    <button id='notificationClearBtn' class="notificationClearBtn" ng-if="clearAllFlag" ng-click="clearAllNotificationTap()">Clear All</button>
+                                </span>
+                            </div>
+                            <div class="notification-menu-list-wrapper">
+                                <div class="notification-menu" ng-if="notificationCount==0">You don't have any
+                                    notifications
+                                </div>
+                                <div class="notification-menu" ng-repeat="notification in notifications"
+                                     ng-click="notificationHandler(notification)">
+                                    <div class="notification-timestamp">{{notification.recognitionTimeStamp}}</div>
+                                    <div class="notification-text">{{notification.description}}</div>
+                                </div>
+                            </div>
+                            <div id="loadMoreBtn" type="button" ng-click="loadMoreNotifications()"
+                                 class="notification-menu-header load-more"
+                                 ng-if="notificationCount!=0 && currentPage<totalPages">
+                                Load More
+                                
+                            </div>
+                        </div>
+                            </span>
+                        <div ng-style="{'background-image': 'url(' + profileImage + ')'}" ng-click="gotoProfile()" class="img-circle hide-element-in-desktop" ng-class="{true:'ie-910-img',false:'other-img'}[ie10]"></div>
+                    </div>
+                </div>
+                <div class="hamburger visible-xs hide-element-in-desktop">
+                    <div ng-init="navCollapsed = true" class="accIcon acc-menu hamburger-menu" ng-click="toggleMenu($event)">
+                        <div collapse="navCollapsed" class="nav-collapse collapse navbar-responsive-collapse hamburger-menu-ui">
+                            <ul class="nav">
+                                <p class="menu-text" ng-click="goToAllRecognitions()"><span>{{'header.all-recognitions' | i18n}}</span></p>
+                                <p class="menu-text about"><span>{{'header.about' | i18n}}</span></p>
+                                <footer class="profile-footer" ng-click="gotoProfile()">
+                                    <div ng-style="{'background-image': 'url(' + profileImage + ')'}" class="img-menu"></div>
+                                    <h1 class="menuName">{{profilePageData.FirstName + " " +profilePageData.LastName}}</h1>
+                                </footer>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+            <center class="hide-element-in-device">
+                <div class="divRecognizeBtnXS">
+                    <button class=" RecognizeBtnXS visible-xs" ng-click="open()">RECOGNIZE A COLLEAGUE</button>
+                </div>
+            </center>
+            <div class="container home-view view-background">
+                <div ui-view class="uiViewCss">
+                </div>
+            </div>
+            <footer>
+                <span class="text-muted">Copyright @ 2015 | All Rights Reserved</span>
+                <span class="text-muted hidden-xs">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                <span class="text-muted hidden-xs" ng-click="gotoDataPrivacy()" >Data Privacy Statement</span>
+                <span class="text-muted hidden-xs">|</span>
+                <span class="text-muted hidden-xs" ng-click="gotoTermsOfUse()">Terms of Use</span>
+            </footer>
+        </div>
+    </div>
+

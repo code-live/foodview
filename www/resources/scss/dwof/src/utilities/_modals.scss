@@ -1,0 +1,303 @@
+.modal-backdrop {
+    @extend .dark_overlay;
+    &.in,
+    &.fade {
+        @include opacity(1);
+    }
+}
+
+.modal {
+    //background-color: rgba(0,0,0,0.5);
+    margin: 0px auto;
+    min-height: 100px;
+    width: 100%;
+    //max-width: 300px; 
+    //color: $dark-blue; 
+    height: auto;
+    @include border-radius(3px);
+    padding: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-overflow-scrolling: auto;
+    .dropdown-menu {
+        position: inherit;
+    }
+    .modal-header {
+        text-align: center;
+        padding: 10px;
+        margin: 20px 0 10px;
+        border-bottom: 0px;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: $dark-gray;
+        font-family: $roboto-light;
+    }
+    .modal-body {
+        padding: 5px 15px;
+        input[type="text"] {
+            border: none;
+            //margin-bottom: 100px;
+            background-color: $off-gray;
+            margin-bottom: 0px;
+        }
+        textarea {
+            padding: 5px 10px;
+            border: 1px solid $dark-blue;
+            resize: none;
+        }
+    }
+    .modal-footer {
+        border-top: 0px;
+        padding: 10px;
+        text-align: left;
+        a:last-of-type {
+            float: right;
+        }
+    }
+    .modal-size.recognize-colleague-container {
+        width: 90%;
+        margin: 0 auto 3rem auto;
+        .modal-header {
+            padding: 0 !important;
+            margin: 0 !important;
+            border-bottom: 1px solid !important;
+            .modal-title {
+                margin-left: 0 !important;
+                margin-top: 3rem;
+                margin-bottom: 0.5rem;
+                font-size: 24px;
+                color: #333333;
+            }
+            .crossIcon {
+                margin-right: 0;
+                position: absolute;
+                right: 1.5rem;
+                top: 1rem;
+                font-size: 20px;
+            }
+        }
+        .modal-body {
+            padding: 0;
+            margin-top: 2.5rem;
+            height: auto;
+            overflow: visible;
+            .container-fluid {
+                margin: 0;
+                padding: 0;
+                .left-inner-addon {
+                    margin: 0 !important;
+                    i.appIcon {
+                        padding-left: 0;
+                        &::before {
+                            padding-left: 0 !important;
+                        }
+                    }
+                    .rec-colleague-input-box {
+                        margin-left: 0 !important;
+                    }
+                    .dropdown-menu {
+                        margin: 0 !important;
+                        width: 75%;
+                        max-height: auto;
+                        height: auto;
+                        .typeaheadListHeading {
+                            padding: 1.1rem 0 1.1rem 2.2rem !important;
+                        }
+                        li {
+                            .card {
+                                .item {
+                                    margin-left: 0;
+                                    margin-right: 0;
+                                    .suggestionData {
+                                        padding: 0;
+                                        margin: .5rem 0 0 1.5rem;
+                                        p span {
+                                            font-size: 12px !important;
+                                            line-height: 15px !important;
+                                            color: #666 !important;
+                                        }
+                                    }
+                                    .suggestionData > span {
+                                        font-family: Rotssa-Light !important;
+                                        font-size: 21px !important;
+                                        line-height: 25px !important;
+                                        color: #333 !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        .modal-size.recognize-colleague-container {
+            .modal-header {
+                border: 10px solid #333333 !important;
+            }
+        }
+        .modal-size.recognize-colleague-container .modal-body .container-fluid .left-inner-addon i.appIcon {
+            margin-top: -75px;
+            width: 101%;
+            float: right;
+            position: relative;
+        }
+        .modal-size.recognize-colleague-container .modal-body .container-fluid .left-inner-addon .dropdown-menu {
+            margin-top: -25px !important;
+            margin-left: -50px !important;
+        }
+        .modal .modal-size.recognize-colleague-container .modal-body {
+            margin-top: 20px;
+        }
+    }
+}
+
+.modal .dropdown-menu {
+    width: 100%;
+}
+
+.suggestionData {
+    padding: 12px;
+	white-space: initial; 
+}
+
+.dropdown-menu {
+    padding: 0px 0px;
+    margin: 0px 0 0;
+}
+
+.acc-thing.card {
+    margin: 0 0 1px 0;
+}
+
+.icon {
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+}
+
+.removingPaddingRight {
+    padding-right: 0px;
+}
+
+.acc-thing .item {
+    padding-top: 8px;
+    padding-bottom: 0px;
+}
+
+.modal-title {
+    font-family: Rotssa !important;
+    font-size: 2.5rem;
+}
+
+.modal .modal-header {
+    padding-left: 15px;
+    margin-left: 15px;
+    width: 100%
+}
+
+.crossIcon {
+    margin-right: 4%;
+}
+
+.modal .modal-body .custom-recognition-id {
+    @include font-size(12px);
+    font-family: arial;
+    color: $steel-black;
+    display: block;
+    font-weight: lighter;
+}
+
+.modal .modal-body .custom-rec-attribute-line {
+    margin-top: 6px;
+}
+
+.modal-open .modal {
+    //overflow-y: auto;
+    //overflow-y: scroll;
+}
+
+.modal-body.create-recogn-modal-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    //overflow-y: hidden;
+    height: 550px;
+}
+.crossIcon-alignment{
+	right: -3rem ! important;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+	.crossIcon-alignment{
+		padding: 0 10px 10px 10px;
+	}
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+	.crossIcon-alignment{
+		right: -2rem ! important;
+		padding: 0 10px 10px 10px;
+	}
+}
+
+@media (min-width: 767px) {
+    .modal-dialog {
+        margin: 0px;
+    }
+}
+
+//nokia lumia modal scroll issue fix
+    .wp8-scroll{
+        overflow: hidden;
+        position: fixed;
+    }
+
+
+/* portrait */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+    #stream-view-all-items-content {
+        max-height: none !important;
+        max-width: none !important;
+    }
+    .streamify-modal-dialog-body {
+        max-height: 85vh;
+        overflow-y: scroll !important;
+    }
+    .streamify-modal-dialog-buttons {
+        overflow: hidden;
+        padding: 0 15px 15px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 11;
+        background: #fff;
+    }
+}
+
+
+/* Landscape */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) and (orientation: landscape) {
+    #stream-view-all-items-content {
+        max-height: none !important;
+        max-width: none !important;
+    }
+    .streamify-modal-dialog-body {
+        max-height: 76vh;
+        overflow-y: scroll !important;
+    }
+    .streamify-modal-dialog-buttons {
+        overflow: hidden;
+        padding: 0 15px 15px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 11;
+        background: #fff;
+    }
+}
+.stream-view-all-noresults{
+    height: 60px;
+}

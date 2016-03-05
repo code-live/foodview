@@ -1,0 +1,144 @@
+.icon {
+	display: inline-block; 
+	width: 20px; 
+	height: 20px;
+	&.dropdown-caret {
+		@include image-background($dropdown-url);
+		border-top:0;
+		background-size:100% 50%;
+		background-position:0;
+	}
+	&.dropdown-arrow {
+		@include image-background($dropdown-graph-url);
+	}
+
+	&.delete {
+			@include image-background($delete-url);
+	}
+	&.search {
+			@include image-background($search-url);
+	}
+	&.settings {
+			@include image-background($settings-url);
+	}
+	&.logout {
+			@include image-background($logout-url);
+	}
+	&.edit {
+			@include image-background($edit-url);
+	}
+	&.edit-btn {
+			@include image-background($edit-btn-url);
+	}
+	&.user-profile {
+			@include image-background($logo-user-url);
+	}
+	&.logo {
+			@include image-background($logo-url);
+	}
+	&.logo-small {
+			@include image-background($logo-small-url);
+	}
+	&.successfull{
+		@include image-background($success-url);
+    }
+    &.profileimg{
+		@include image-background($profile-url);
+    }
+    &.profiletabstar{
+		@include image-background($tab1star);
+    }
+    &.profiletabpeople{
+		@include image-background($tab2people);
+    }
+    &.profiletabsetting{
+		@include image-background($tab3setting);
+    }
+
+
+    
+}
+
+.appIcon:before {
+	color: $icon-color;
+	font-family: 'dwof' !important;
+	font-size : 2rem;
+	line-height : 1;
+}
+.icon-triangle-down:before {
+	content: "\e900";
+	color:red !important;
+	font-size: 2.2rem;
+	line-height: 0.65;
+}
+.icon-triangle-left:before {
+	content: "\e901";
+}
+.icon-triangle-right:before {
+	content: "\e902";
+}
+.icon-triangle-up:before {
+	content: "\e903";
+	color:green !important;
+	font-size: 2.2rem;
+	line-height: 0.8;
+}
+.icon-angle-down:before {
+	content: "\e600";
+}
+.icon-angle-left:before {
+	content: "\e601";
+}
+.icon-angle-right:before {
+	content: "\e602";
+}
+.icon-bell:before {
+	content: "\e603";
+}
+.icon-camera2-o:before {
+	content: "\e604";
+	color:$white;
+	font-size: 3rem;
+}
+.icon-close:before {
+	content: "\e605";
+}
+.icon-medal-star-2:before {
+	content: "\e606";
+}
+.icon-menu-squares-condensed:before {
+	content: "\e607";
+}
+.icon-people3:before {
+	content: "\e608";
+}
+.icon-rotate-left:before {
+	content: "\e609";
+}
+.icon-rotate-right:before {
+	content: "\e60a";
+}
+.icon-search:before {
+	content: "\e60b";
+}
+.icon-settings-o:before {
+	content: "\e60c";
+}
+.icon-shine-heart:before {
+	content: "\e60d";
+}
+.icon-shine-heart-o:before {
+	content: "\e60e";
+}
+.icon-star-trophy:before {
+	content: "\e60f";
+}
+.icon-writing-o:before {
+	content: "\e610";
+}
+.icon-heart-o:before {
+    content: "\e612";
+}
+.acc-edit-document-o:before {
+	content: "\e6d9";
+}

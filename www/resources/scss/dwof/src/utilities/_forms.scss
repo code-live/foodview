@@ -1,0 +1,95 @@
+input[type="text"], input[type="password"], .input button,.input button:focus, input[type="email"] {
+	padding: 5px 10px;
+  border: 1px solid $input-border-color; 
+	@include border-radius(2px);
+	font-size: $size-par;
+	color: $input-text-color;
+	margin-bottom: 10px; 
+  background-color:$input-bg-color;
+}
+.input button,.input button:focus{
+  border: 1px solid $dropdown-border-color;
+}
+
+input::-webkit-input-placeholder ,input:-moz-input-placeholder,input:-ms-input-placeholder{
+	color: $input-placeholder-color;
+	font-size: $size-par; 
+	padding-top: 2px;
+}
+
+textarea {
+	@include border-radius(2px);
+  background-color:$input-bg-color;
+	border: 1px solid $input-border-color;
+	font-size: $size-par;
+	margin: 10px auto;
+	color: $input-text-color;
+	padding: 10px; 
+	resize: none; 
+	
+}
+.left {
+    float:left;
+}
+.wrap {
+    padding:5px 6px 6px 7px; 
+    overflow:hidden;
+}
+ .inputWithButtonContainer {
+.search {
+    position:relative; top:2px; /* readujst in jsfiddle */
+    padding:8px 5px 8px 30px;
+    border:1px solid #ccc !important;
+    @include image-background($search-url);
+    background-size: 5%;
+    background-position: 2% center;
+}
+  @include border-radius(2px);
+  color: $search-text-color;
+  min-width: 50%;
+  font-size: $size-par;
+  margin-bottom: 10px; 
+  margin-left: auto; 
+  margin-right: auto;
+  position: relative;
+  .placeholder {
+    display: inline-block; 
+    margin-top: 4px;
+  } 
+  .glyphicon-search, .icon-clear {
+    position: relative;
+    float: left; 
+    //right: -34px;
+    //top: 0px;
+  }
+  input::before{
+    content: "\e003";
+  }
+  .icon-clear {
+    top: 5px;
+  }
+  input,tags-input {
+    padding: 5px 0px 5px 0px;
+    border: 2px solid $search-border-color ;
+    line-height: 1;
+    font-size: $size-par;
+    height: 34px; 
+    margin: 0;
+    background-color: $search-fill-color;
+    float: none; 
+    display: block; 
+    width: 100%;
+    .tags {
+      padding: 0;
+    }
+    ~.icon-search, .icon-clear {
+      
+      top: -35px;
+    }
+    ~.icon-clear { top: -30px; }
+  }
+  input[type="text"] {
+    margin-bottom: 0px; 
+  }
+  
+}

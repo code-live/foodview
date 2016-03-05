@@ -1,0 +1,9 @@
+<div class="row searchresult-arrowbar">
+	<span class="appIcon searchresult-arrow" ng-click="searchBackHeader()"></span>
+</div>
+<div infinite-scroll="searchPagingFunction()">
+	<div class="search-grid">
+		<grid-directive griddata='searchData1' cardcategory='allRecCard'></grid-directive>
+		<spinner img-src="{{spinnerPathsearch}}" show="searchRecognitionMobileLoading"></spinner>
+	</div>
+</div>
